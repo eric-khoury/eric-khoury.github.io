@@ -6,26 +6,30 @@
     <title>SoundHunter</title>
     <script src="https://cdn.counter.dev/script.js" data-id="84bbd719-2b3d-4ffe-9060-305f6f886415" data-utcoffset="1"></script>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Seymour+One&display=swap');
+      /* @import url('https://fonts.googleapis.com/css2?family=Seymour+One&display=swap'); */
+      @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;700&display=swap');
 
       .logo-font {
         /* text-shadow: 7px -11px #fff; */
         color: #ffba2a;
-        font-family: 'Seymour One', sans-serif;
+        font-family: 'Red Hat Mono', monospace;
       }
 
       @keyframes breathing {
         0% {
-          width: 100%;
-          height: 100%;
+          /* width: 100%;
+          height: 100%; */
+          scale: 1.0;
         }
         50% {
-          width: 80%;
-          height: 80%;
+          /* width: 80%;
+          height: 80%; */
+          scale: 0.8;
         }
         100% {
-          width: 100%;
-          height: 100%;
+          /* width: 100%;
+          height: 100%; */
+          scale: 1.0;
         }
       }
       @keyframes breathing-text {
@@ -57,9 +61,7 @@
       body {
         height: 100%;
         width: 100%;
-        background-image: url('map.png');
-        background-repeat: no-repeat;
-        /* background-size: cover; */
+        background-color: #1f1f1f;
       }
 
       .wrapper {
@@ -72,7 +74,7 @@
       }
 
       .app-logo {
-        box-shadow: 53px -16px 5px #ffba2a33, 92px -40px 31px #ff2a2a59;
+        /* box-shadow: 53px -16px 5px #ffba2a33, 92px -40px 31px #ff2a2a59; */
         border-radius: 25px;
         display: flex;
         align-items: center;
@@ -141,7 +143,8 @@
       }
 
       h1,h2,h3,h5 {
-        font-family: 'Seymour One', sans-serif;
+        font-family: 'Red Hat Mono', monospace;
+        font-weight: bold;
       }
 
       h1 {
@@ -164,14 +167,16 @@
       }
 
       h4 {
-        margin-top: 30px;
+        margin: 7px auto;
       }
 
       .market-button-wrapper {
+        /* font-family: 'Seymour One', sans-serif !important; */
         opacity: 0.4;
         display: flex;
         justify-content: space-between;
         width: 330px;
+        margin: 37px auto;
       }
 
       .market-btn {
@@ -179,8 +184,9 @@
         display: inline-block;
         padding: 0.3125rem 0.875rem;
         padding-left: 2.8125rem;
-        -webkit-transition: border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
-        transition: border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+        /* font-family: 'Seymour One', sans-serif; */
+        /* -webkit-transition: border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+        transition: border-color 0.25s ease-in-out, background-color 0.25s ease-in-out; */
         border: 1px solid #e7e7e7;
         background-position: center left 0.75rem;
         background-color: #fff;
@@ -199,10 +205,6 @@
         color: #888;
         font-size: 0.75rem;
     }
-    .market-btn:hover {
-        background-color: #f7f7f7;
-        text-decoration: none;
-    }
     .apple-btn {
         background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzMDUgMzA1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzMDUgMzA1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCI+CjxnIGlkPSJYTUxJRF8yMjhfIj4KCTxwYXRoIGlkPSJYTUxJRF8yMjlfIiBkPSJNNDAuNzM4LDExMi4xMTljLTI1Ljc4NSw0NC43NDUtOS4zOTMsMTEyLjY0OCwxOS4xMjEsMTUzLjgyQzc0LjA5MiwyODYuNTIzLDg4LjUwMiwzMDUsMTA4LjIzOSwzMDUgICBjMC4zNzIsMCwwLjc0NS0wLjAwNywxLjEyNy0wLjAyMmM5LjI3My0wLjM3LDE1Ljk3NC0zLjIyNSwyMi40NTMtNS45ODRjNy4yNzQtMy4xLDE0Ljc5Ny02LjMwNSwyNi41OTctNi4zMDUgICBjMTEuMjI2LDAsMTguMzksMy4xMDEsMjUuMzE4LDYuMDk5YzYuODI4LDIuOTU0LDEzLjg2MSw2LjAxLDI0LjI1Myw1LjgxNWMyMi4yMzItMC40MTQsMzUuODgyLTIwLjM1Miw0Ny45MjUtMzcuOTQxICAgYzEyLjU2Ny0xOC4zNjUsMTguODcxLTM2LjE5NiwyMC45OTgtNDMuMDFsMC4wODYtMC4yNzFjMC40MDUtMS4yMTEtMC4xNjctMi41MzMtMS4zMjgtMy4wNjZjLTAuMDMyLTAuMDE1LTAuMTUtMC4wNjQtMC4xODMtMC4wNzggICBjLTMuOTE1LTEuNjAxLTM4LjI1Ny0xNi44MzYtMzguNjE4LTU4LjM2Yy0wLjMzNS0zMy43MzYsMjUuNzYzLTUxLjYwMSwzMC45OTctNTQuODM5bDAuMjQ0LTAuMTUyICAgYzAuNTY3LTAuMzY1LDAuOTYyLTAuOTQ0LDEuMDk2LTEuNjA2YzAuMTM0LTAuNjYxLTAuMDA2LTEuMzQ5LTAuMzg2LTEuOTA1Yy0xOC4wMTQtMjYuMzYyLTQ1LjYyNC0zMC4zMzUtNTYuNzQtMzAuODEzICAgYy0xLjYxMy0wLjE2MS0zLjI3OC0wLjI0Mi00Ljk1LTAuMjQyYy0xMy4wNTYsMC0yNS41NjMsNC45MzEtMzUuNjExLDguODkzYy02LjkzNiwyLjczNS0xMi45MjcsNS4wOTctMTcuMDU5LDUuMDk3ICAgYy00LjY0MywwLTEwLjY2OC0yLjM5MS0xNy42NDUtNS4xNTljLTkuMzMtMy43MDMtMTkuOTA1LTcuODk5LTMxLjEtNy44OTljLTAuMjY3LDAtMC41MywwLjAwMy0wLjc4OSwwLjAwOCAgIEM3OC44OTQsNzMuNjQzLDU0LjI5OCw4OC41MzUsNDAuNzM4LDExMi4xMTl6IiBmaWxsPSIjMmUyZTJlIi8+Cgk8cGF0aCBpZD0iWE1MSURfMjMwXyIgZD0iTTIxMi4xMDEsMC4wMDJjLTE1Ljc2MywwLjY0Mi0zNC42NzIsMTAuMzQ1LTQ1Ljk3NCwyMy41ODNjLTkuNjA1LDExLjEyNy0xOC45ODgsMjkuNjc5LTE2LjUxNiw0OC4zNzkgICBjMC4xNTUsMS4xNywxLjEwNywyLjA3MywyLjI4NCwyLjE2NGMxLjA2NCwwLjA4MywyLjE1LDAuMTI1LDMuMjMyLDAuMTI2YzE1LjQxMywwLDMyLjA0LTguNTI3LDQzLjM5NS0yMi4yNTcgICBjMTEuOTUxLTE0LjQ5OCwxNy45OTQtMzMuMTA0LDE2LjE2Ni00OS43N0MyMTQuNTQ0LDAuOTIxLDIxMy4zOTUtMC4wNDksMjEyLjEwMSwwLjAwMnoiIGZpbGw9IiMyZTJlMmUiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
     }
@@ -219,57 +221,122 @@
     .market-btn-light .market-button-subtitle {
         color: rgba(255, 255, 255, 0.6);
     }
-    .market-btn-light:hover {
-        background-color: rgba(255, 255, 255, 0.06);
-    }
     .market-btn-light.apple-btn {
         background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzMDUgMzA1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzMDUgMzA1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCI+CjxnIGlkPSJYTUxJRF8yMjhfIj4KCTxwYXRoIGlkPSJYTUxJRF8yMjlfIiBkPSJNNDAuNzM4LDExMi4xMTljLTI1Ljc4NSw0NC43NDUtOS4zOTMsMTEyLjY0OCwxOS4xMjEsMTUzLjgyQzc0LjA5MiwyODYuNTIzLDg4LjUwMiwzMDUsMTA4LjIzOSwzMDUgICBjMC4zNzIsMCwwLjc0NS0wLjAwNywxLjEyNy0wLjAyMmM5LjI3My0wLjM3LDE1Ljk3NC0zLjIyNSwyMi40NTMtNS45ODRjNy4yNzQtMy4xLDE0Ljc5Ny02LjMwNSwyNi41OTctNi4zMDUgICBjMTEuMjI2LDAsMTguMzksMy4xMDEsMjUuMzE4LDYuMDk5YzYuODI4LDIuOTU0LDEzLjg2MSw2LjAxLDI0LjI1Myw1LjgxNWMyMi4yMzItMC40MTQsMzUuODgyLTIwLjM1Miw0Ny45MjUtMzcuOTQxICAgYzEyLjU2Ny0xOC4zNjUsMTguODcxLTM2LjE5NiwyMC45OTgtNDMuMDFsMC4wODYtMC4yNzFjMC40MDUtMS4yMTEtMC4xNjctMi41MzMtMS4zMjgtMy4wNjZjLTAuMDMyLTAuMDE1LTAuMTUtMC4wNjQtMC4xODMtMC4wNzggICBjLTMuOTE1LTEuNjAxLTM4LjI1Ny0xNi44MzYtMzguNjE4LTU4LjM2Yy0wLjMzNS0zMy43MzYsMjUuNzYzLTUxLjYwMSwzMC45OTctNTQuODM5bDAuMjQ0LTAuMTUyICAgYzAuNTY3LTAuMzY1LDAuOTYyLTAuOTQ0LDEuMDk2LTEuNjA2YzAuMTM0LTAuNjYxLTAuMDA2LTEuMzQ5LTAuMzg2LTEuOTA1Yy0xOC4wMTQtMjYuMzYyLTQ1LjYyNC0zMC4zMzUtNTYuNzQtMzAuODEzICAgYy0xLjYxMy0wLjE2MS0zLjI3OC0wLjI0Mi00Ljk1LTAuMjQyYy0xMy4wNTYsMC0yNS41NjMsNC45MzEtMzUuNjExLDguODkzYy02LjkzNiwyLjczNS0xMi45MjcsNS4wOTctMTcuMDU5LDUuMDk3ICAgYy00LjY0MywwLTEwLjY2OC0yLjM5MS0xNy42NDUtNS4xNTljLTkuMzMtMy43MDMtMTkuOTA1LTcuODk5LTMxLjEtNy44OTljLTAuMjY3LDAtMC41MywwLjAwMy0wLjc4OSwwLjAwOCAgIEM3OC44OTQsNzMuNjQzLDU0LjI5OCw4OC41MzUsNDAuNzM4LDExMi4xMTl6IiBmaWxsPSIjRkZGRkZGIi8+Cgk8cGF0aCBpZD0iWE1MSURfMjMwXyIgZD0iTTIxMi4xMDEsMC4wMDJjLTE1Ljc2MywwLjY0Mi0zNC42NzIsMTAuMzQ1LTQ1Ljk3NCwyMy41ODNjLTkuNjA1LDExLjEyNy0xOC45ODgsMjkuNjc5LTE2LjUxNiw0OC4zNzkgICBjMC4xNTUsMS4xNywxLjEwNywyLjA3MywyLjI4NCwyLjE2NGMxLjA2NCwwLjA4MywyLjE1LDAuMTI1LDMuMjMyLDAuMTI2YzE1LjQxMywwLDMyLjA0LTguNTI3LDQzLjM5NS0yMi4yNTcgICBjMTEuOTUxLTE0LjQ5OCwxNy45OTQtMzMuMTA0LDE2LjE2Ni00OS43N0MyMTQuNTQ0LDAuOTIxLDIxMy4zOTUtMC4wNDksMjEyLjEwMSwwLjAwMnoiIGZpbGw9IiNGRkZGRkYiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
     }
 
-    /* ------------------------- EQUALIZER */
 
-    #equalizer {
+    .rightbox {
+      height: 100%;
+      margin-top: 110px;
+    }
+
+    .rb-container {
+      /* font-family: "PT Sans", sans-serif; */
+      width: 50%;
+      margin: auto;
+      display: block;
       position: relative;
-      width: 500px;
-      height: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
-    #horizontal {
-      width: 100%;
-      border: 1px solid rgb(223, 152, 0);
+    .rb-container ul.rb {
+      margin: 2.5em 0;
+      padding: 0;
+      display: inline-block;
     }
 
-    #vertical-lines {
+    .rb-container ul.rb li {
+      list-style: none;
+      margin: 0 auto;
+      min-height: 50px;
+      border-left: 1px dashed #fff;
+      padding: 0 0 50px 30px;
+      position: relative;
+    }
+
+    .rb-container ul.rb li:last-child {
+      border-left: 0;
+    }
+
+    .rb-container ul.rb li::before {
       position: absolute;
-      width: 100%;
-      height: 150px;
-      display: flex;
-      align-items: center;
+      left: -18px;
+      top: -5px;
+      content: " ";
+      border: 8px solid rgb(255, 255, 255);
+      border-radius: 500%;
+      background: #50d890;
+      height: 20px;
+      width: 20px;
+      transition: all 500ms ease-in-out;
     }
 
-    .vertical {
-      width: 5px;
-      height: 100px;
+    /* PROGRESS STUFF */
+    .rb-container ul.rb li.completed::before {
+      border: 8px solid #50d890;
+    }
+    .rb-container ul.rb li.ongoing::before {
+      border: 8px solid #1f1f1f;
+      background-color: #f1d131;
+    }
+    .rb-container ul.rb li.todo::before {
+      border: 8px solid #1f1f1f;
+      background-color: #4b4a4a;
+    }
+
+    ul.rb li.ongoing .timestamp {
+      color: #f1d131;
+      position: relative;
+      width: 100px;
+      font-size: 12px;
+    }
+
+    ul.rb li .timestamp {
+      color: #50d890;
+      position: relative;
+      width: 100px;
+      font-size: 12px;
+    }
+
+    .item-title {
+      color: #fff;
+    }
+
+    .todo .item-title {
+      color: #bfbfbf;
+    }
+
+    ul.rb li.todo .timestamp {
+      color: #777777;
+    }
+
+    h2.roadmap-header {
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .email-input {
+      text-decoration: none;
+      margin: 0 auto;
+      border: 0;
       border-radius: 5px;
-      background-color: rgb(223, 152, 0);
-      background-color: rgb(223, 152, 0);
-
-      animation-direction: alternate-reverse;
-      margin: 1px;
+      padding: 12px 20px;
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 19px;
+      color: #1f1f1f;
+      background-color: #fff;
     }
 
-    @keyframes equalizer {
-      from {
-        height: 80%;
-      }
-      
-      to {
-        height: 5px;
-      }
+    a.roadmap-link, a.roadmap-link:visited {
+      text-decoration: underline;
+      color: #d4d4d4;
     }
+
+    a.roadmap-link:hover {
+      color: #fff;
+    }
+
 
     </style>
   </head>
@@ -281,88 +348,7 @@
         <img src="./icon.png" alt="SoundHunter logo">
       </div>
 
-      <div id="equalizer">
-        <div id="horizontal"></div>
-        <div id="vertical-lines">
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-          <div class="vertical"></div>
-        </div>
-      </div>
-
-      <h4>Coming soon!... ish</h4>
       <div class="market-button-wrapper">
-
         <a href="#" target="_blank" class="market-btn apple-btn" role="button">
           <span class="market-button-subtitle">Download on the</span>
           <span class="market-button-title">App Store</span>
@@ -373,21 +359,113 @@
           <span class="market-button-subtitle">Download on the</span>
           <span class="market-button-title">Google Play</span>
         </a>
-
       </div>
-      <!-- <div class="app-logo">
-        <div class="ring1">
-          <div class="ring2">
-            <div class="ring3">
-              <div class="ring4">
-                <p class="logo-text logo-font">S</p>
+
+
+
+      <h3>We are launching soon!</h3>
+      <h4>Get notified to be one of our private beta testers :) </h4>
+      <a href="https://docs.google.com/forms/d/1wCR1qQA8QaPLmV5GaQ79ie0kR5jN8oiEOwi8VWQMoS8" target="_blank" class="email-input">Sign up to get notified</a>
+
+
+      <div class="rightbox">
+
+        <h2 class="roadmap-header">Our roadmap</h2>
+
+        <div class="rb-container">
+          <ul class="rb">
+
+            <li class="rb-item completed" ng-repeat="itembx">
+              <div class="timestamp">
+                COMPLETED
               </div>
-            </div>
-          </div>
+              <div class="item-title">Core Features</div>
+            </li>
+ 
+ 
+            <li class="rb-item ongoing" ng-repeat="itembx">
+              <div class="timestamp">
+                WORK IN PROGRESS
+              </div>
+              <div class="item-title">Search and tagging system</div>
+            </li>
+ 
+            <li class="rb-item todo" ng-repeat="itembx">
+              <div class="timestamp">
+                PLANNED
+              </div>
+              <div class="item-title">
+                <a href="https://docs.google.com/forms/d/1wCR1qQA8QaPLmV5GaQ79ie0kR5jN8oiEOwi8VWQMoS8" target="_blank" class="roadmap-link">
+                  Launch private beta
+                </a>
+              </div>
+            </li>
+
+            <li class="rb-item todo" ng-repeat="itembx">
+              <div class="timestamp">
+                PLANNED
+              </div>
+              <div class="item-title">Go through feedback from beta</div>
+            </li>
+ 
+            <li class="rb-item todo" ng-repeat="itembx">
+              <div class="timestamp">
+                PLANNED
+              </div>
+              <div class="item-title">List recordings near me</div>
+            </li>
+ 
+            <li class="rb-item todo" ng-repeat="itembx">
+              <div class="timestamp">
+                PLANNED
+              </div>
+              <div class="item-title">Favourite/ranking system</div>
+            </li>
+ 
+            <li class="rb-item todo" ng-repeat="itembx">
+              <div class="timestamp">
+                PLANNED
+              </div>
+              <div class="item-title">
+                <a href="https://universalcategorysystem.com/" target="_blank" class="roadmap-link">
+                  Universal Category System
+                </a>
+                compliance
+              </div>
+            </li>
+ 
+            <li class="rb-item todo" ng-repeat="itembx">
+              <div class="timestamp">
+                PLANNED
+              </div>
+              <div class="item-title">Find random recording</div>
+            </li>
+ 
+            <li class="rb-item todo" ng-repeat="itembx">
+              <div class="timestamp">
+                PLANNED
+              </div>
+              <div class="item-title">Full lenght recordings</div>
+            </li>
+ 
+            <li class="rb-item todo" ng-repeat="itembx">
+              <div class="timestamp">
+                PLANNED
+              </div>
+              <div class="item-title">(bonus) End of Year wrap up</div>
+            </li>
+ 
+            <li class="rb-item todo" ng-repeat="itembx">
+              <div class="timestamp">
+                PLANNED
+              </div>
+              <div class="item-title">Let users buy/sell recordings</div>
+            </li>
+    
+          </ul>
+    
         </div>
-      </div> -->
-
-
+      </div>
 
 
     </div>
