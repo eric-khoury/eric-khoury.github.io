@@ -45,16 +45,16 @@
       }
       @keyframes breathing-logo {
         0% {
-          width: 200px;
-          height: 200px;
+          width: 180px;
+          height: 180px;
         }
         50% {
-          width: 170px;
-          height: 170px;
+          width: 150px;
+          height: 150px;
         }
         100% {
-          width: 200px;
-          height: 200px;
+          width: 180px;
+          height: 180px;
         }
       }
 
@@ -80,7 +80,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: rgb(242 13 16);
+        background-color: transparent;
         width: 200px;
         height: 200px;
       }
@@ -161,9 +161,10 @@
       }
 
       img {
-        animation: breathing-logo 4s ease-in-out infinite;
-        width: 200px;
-        height: 200px;
+        /* animation: breathing-logo 4s ease-in-out infinite; */
+        box-shadow: 1px 2px 6px #0000003d;
+        width: 196px;
+        height: 196px;
         border-radius: 40px;
       }
 
@@ -363,9 +364,9 @@
   <body>
 
     <div class="wrapper">
-      <h1 class="logo-font">SoundHunter</h1>
+      <!-- <h1 class="logo-font">SoundHunter</h1> -->
       <div class="app-logo">
-        <img src="./icon.png" alt="SoundHunter logo">
+        <img src="./icon.jpg" alt="SoundHunter logo">
       </div>
 
       <div class="market-button-wrapper">
@@ -405,24 +406,23 @@
 
             <li class="rb-item completed" ng-repeat="itembx">
               <div class="timestamp">
-                COMPLETED
+                DONE
               </div>
               <div class="item-title">Core Features</div>
             </li>
  
+            <li class="rb-item completed" ng-repeat="itembx">
+              <div class="timestamp">
+                DONE
+              </div>
+              <div class="item-title">New logo (because lol) :)</div>
+            </li>
  
             <li class="rb-item ongoing" ng-repeat="itembx">
               <div class="timestamp">
                 WORK IN PROGRESS
               </div>
               <div class="item-title">Search and tagging system</div>
-            </li>
-
-            <li class="rb-item ongoing" ng-repeat="itembx">
-              <div class="timestamp">
-                WORK IN PROGRESS
-              </div>
-              <div class="item-title">New logo (because lol) :)</div>
             </li>
  
             <li class="rb-item todo" ng-repeat="itembx">
