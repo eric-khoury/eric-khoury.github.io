@@ -358,6 +358,32 @@
       color: #8dc6ffb5;
     }
 
+    /* CUBE STUFF */
+
+    #cube {
+      font-family: 'Red Hat Mono', monospace;
+      background-color: #d53233;
+      transform-style: preserve-3d;
+      animation: spin 12s linear infinite;
+      border-radius: 6px;
+      margin: 0 auto;
+      color: white;
+
+    }
+
+    #cube > div {
+      position: absolute;
+      transform-style: preserve-3d;
+    }
+
+    @keyframes spin {
+      from { 
+        transform: rotateX(-0.1turn) rotateY(0turn); 
+      }
+      to { 
+        transform: rotateX(-0.1turn) rotateY(1turn); 
+      }
+    }
 
     </style>
   </head>
@@ -399,7 +425,6 @@
         <br />
         No more notebooks, no more bullshit.
       </p>
-
 
 
       <h3>We are launching soon!</h3>
@@ -533,6 +558,21 @@
       </div>
 
 
+    </div>
+
+    <div id="cube" style="width: 4em; height: 8em;">
+      <div style="transform: translate3d(0em, 0em, 2em); color: rgb(250, 189, 74)">S</div>
+      <div style="transform: translate3d(1em, 1em, 2em)">O</div>
+      <div style="transform: translate3d(2em, 0em, 2em)">U</div>
+      <div style="transform: translate3d(2em, 1em, 2em)">N</div>
+      <div style="transform: translate3d(2em, 2em, 2.5em)">d</div>
+
+      <div style="transform: translate3d(3em, 1em, 3em); color: rgb(28, 186, 157)">H</div>
+      <div style="transform: translate3d(4em, 1em, 4em)">U</div>
+      <div style="transform: translate3d(3em, 1em, 5em)">N</div>
+      <div style="transform: translate3d(4em, 1em, 6em); color: rgb(231, 59, 165);">T</div>
+      <div style="transform: translate3d(3em, 1em, 7.5em)">E</div>
+      <div style="transform: translate3d(5em, 1em, 8.5em)">R</div>
     </div>
 
     <footer>
