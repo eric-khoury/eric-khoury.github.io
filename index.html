@@ -362,13 +362,15 @@
 
     #cube {
       font-family: 'Red Hat Mono', monospace;
-      background-color: #d53233;
       transform-style: preserve-3d;
-      animation: spin 12s linear infinite;
       border-radius: 6px;
-      margin: 0 auto;
       color: white;
-
+      transform: rotateX(-0.1turn) rotateY(0.1turn); 
+      height: 70px;
+      width: 100px;
+      margin: 0 auto;
+      background: #736e6e;
+      box-shadow: 0px 0px 98px white;
     }
 
     #cube > div {
@@ -560,7 +562,7 @@
 
     </div>
 
-    <div id="cube" style="width: 4em; height: 8em;">
+    <div id="cube">
       <div style="transform: translate3d(0em, 0em, 2em); color: rgb(250, 189, 74)">S</div>
       <div style="transform: translate3d(1em, 1em, 2em)">O</div>
       <div style="transform: translate3d(2em, 0em, 2em)">U</div>
