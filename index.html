@@ -368,13 +368,13 @@
     #cube {
       font-family: 'Red Hat Mono', monospace;
       transform-style: preserve-3d;
-      border-radius: 6px;
+      border-radius: 50%;
       color: white;
       transform: rotateX(-0.1turn) rotateY(0.1turn); 
-      height: 70px;
+      height: 100px;
       width: 100px;
       margin: 0 auto;
-      background: #736e6e;
+      background: transparent;
       box-shadow: 0px 0px 98px white;
     }
 
@@ -486,9 +486,9 @@
               <div class="item-title">List recordings near me</div>
             </li>
  
-            <li class="rb-item ongoing" ng-repeat="itembx">
+            <li class="rb-item completed" ng-repeat="itembx">
               <div class="timestamp">
-                WORK IN PROGRESS
+                DONE
               </div>
               <div class="item-title">
                 <a href="https://docs.google.com/forms/d/1wCR1qQA8QaPLmV5GaQ79ie0kR5jN8oiEOwi8VWQMoS8" target="_blank" class="roadmap-link">
@@ -497,9 +497,9 @@
               </div>
             </li>
 
-            <li class="rb-item todo" ng-repeat="itembx">
+            <li class="rb-item ongoing" ng-repeat="itembx">
               <div class="timestamp">
-                PLANNED
+                WORK IN PROGRESS
               </div>
               <div class="item-title">Go through feedback from beta</div>
             </li>
